@@ -21,11 +21,11 @@ class Training
             echo 'Lead said: ' . $reaction . '<br/>';
             $event = new LeadMoodChanged($T70);
             Dispatcher::get()->dispatch($event, LeadMoodChanged::NAME);
-            if ($T70->mood->hasPositiveFeedback) {
+            if ($T70->hasPositiveFeedback()) {
                 $junior->newPositiveFeedback();
                 $event = new LeadGavePositiveFeedback($junior->getPositiveFeedbacksAmount());
                 Dispatcher::get()->dispatch($event, LeadGavePositiveFeedback::NAME);
-            } else if ($T70->mood->hasNegativeFeedback) {
+            } else if ($T70->hasNegativeFeedback()) {
                 $junior->newNegativeFeedback();
                 $event = new LeadGaveNegativeFeedback($junior->getNegativeFeedbacksAmount());
                 Dispatcher::get()->dispatch($event, LeadGaveNegativeFeedback::NAME);

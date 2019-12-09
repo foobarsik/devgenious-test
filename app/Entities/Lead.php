@@ -39,6 +39,16 @@ class Lead
         return $this->describeMoodChange();
     }
 
+    public function hasPositiveFeedback()
+    {
+        return $this->mood->hasPositiveFeedback;
+    }
+
+    public function hasNegativeFeedback()
+    {
+        return $this->mood->hasNegativeFeedback;
+    }
+
     private function describeMoodChange(): string
     {
         if ($this->mood === $this->prevMood) {
