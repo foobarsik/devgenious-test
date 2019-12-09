@@ -39,16 +39,6 @@ class Lead
         return $this->describeMoodChange();
     }
 
-    public function remainsInGoodMood()
-    {
-        return $this->mood->isGood() && $this->prevMood->isGood();
-    }
-
-    public function remainsInMurderousMood()
-    {
-        return $this->mood->isMurderous() && $this->prevMood->isMurderous();
-    }
-
     private function describeMoodChange(): string
     {
         if ($this->mood === $this->prevMood) {

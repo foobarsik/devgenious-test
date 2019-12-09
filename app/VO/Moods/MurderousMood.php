@@ -18,6 +18,8 @@ class MurderousMood extends \App\VO\Moods\Mood implements Mood
 
     public function getNegativeTransitionMood(): Mood
     {
+        $this->hasNegativeFeedback = true;
+
         return $this;
     }
 }

@@ -13,6 +13,8 @@ class GoodMood extends \App\VO\Moods\Mood implements Mood
 
     public function getPositiveTransitionMood(): Mood
     {
+        $this->hasPositiveFeedback = true;
+
         return $this;
     }
 

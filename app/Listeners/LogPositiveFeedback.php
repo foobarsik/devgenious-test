@@ -10,6 +10,7 @@ class LogPositiveFeedback extends Event
 {
     public function onPositiveFeedbackAction(LeadGavePositiveFeedback $event)
     {
-        Manager::logPositiveFeedback($event->getAmount());
+        $managerT1001 = new Manager();
+        $managerT1001->logPositiveFeedback($event->getAmount());
     }
 }

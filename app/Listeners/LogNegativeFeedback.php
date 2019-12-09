@@ -10,6 +10,7 @@ class LogNegativeFeedback extends Event
 {
     public function onNegativeFeedbackAction(LeadGaveNegativeFeedback $event)
     {
-        HR::logNegativeFeedback($event->getAmount());
+        $hrT1000 = new HR();
+        $hrT1000->logNegativeFeedback($event->getAmount());
     }
 }
